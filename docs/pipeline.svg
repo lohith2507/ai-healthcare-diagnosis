@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="'Segoe UI', Helvetica, Arial, sans-serif">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1117"/>
+      <stop offset="1" stop-color="#111a2b"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 Z" fill="#8b949e"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="998" height="438" rx="18" fill="url(#bg)" stroke="#30363d"/>
+
+  <!-- Title -->
+  <text x="500" y="46" text-anchor="middle" fill="#e6edf3" font-size="25" font-weight="700">
+    AI Multi-Disease Diagnostic Assistant
+  </text>
+  <text x="500" y="74" text-anchor="middle" fill="#8b949e" font-size="14">
+    Symptoms &amp; patient history, turned into explainable disease-risk predictions
+  </text>
+
+  <!-- ===== Flowing arrows (behind boxes) ===== -->
+  <g stroke-width="2.5" stroke="#8b949e" fill="none" stroke-dasharray="6 6" marker-end="url(#arrow)">
+    <line x1="194" y1="205" x2="212" y2="205"><animate attributeName="stroke-dashoffset" values="24;0" dur="0.8s" repeatCount="indefinite"/></line>
+    <line x1="384" y1="205" x2="402" y2="205"><animate attributeName="stroke-dashoffset" values="24;0" dur="0.8s" repeatCount="indefinite"/></line>
+    <line x1="619" y1="205" x2="637" y2="205"><animate attributeName="stroke-dashoffset" values="24;0" dur="0.8s" repeatCount="indefinite"/></line>
+    <line x1="789" y1="205" x2="807" y2="205"><animate attributeName="stroke-dashoffset" values="24;0" dur="0.8s" repeatCount="indefinite"/></line>
+  </g>
+
+  <!-- ===== Stage 1: Input ===== -->
+  <g>
+    <rect x="24" y="118" width="170" height="174" rx="12" fill="#161b22" stroke="#30363d"/>
+    <circle cx="52" cy="146" r="13" fill="#58a6ff"/>
+    <text x="52" y="151" text-anchor="middle" fill="#0d1117" font-size="14" font-weight="700">1</text>
+    <text x="109" y="200" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="600">Patient Input</text>
+    <text x="109" y="228" text-anchor="middle" fill="#8b949e" font-size="12.5">symptoms &#183;</text>
+    <text x="109" y="246" text-anchor="middle" fill="#8b949e" font-size="12.5">history &#183; labs</text>
+    <rect x="24" y="118" width="170" height="174" rx="12" fill="none" stroke="#58a6ff" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.02;0.10;0.18;1" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ===== Stage 2: Preprocess ===== -->
+  <g>
+    <rect x="212" y="118" width="172" height="174" rx="12" fill="#161b22" stroke="#30363d"/>
+    <circle cx="240" cy="146" r="13" fill="#bc8cff"/>
+    <text x="240" y="151" text-anchor="middle" fill="#0d1117" font-size="14" font-weight="700">2</text>
+    <text x="298" y="200" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="600">Preprocess</text>
+    <text x="298" y="228" text-anchor="middle" fill="#8b949e" font-size="12.5">impute &#183; scale &#183;</text>
+    <text x="298" y="246" text-anchor="middle" fill="#8b949e" font-size="12.5">one-hot encode</text>
+    <rect x="212" y="118" width="172" height="174" rx="12" fill="none" stroke="#bc8cff" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.22;0.30;0.38;1" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ===== Stage 3: Train & Compare models ===== -->
+  <g>
+    <rect x="402" y="118" width="217" height="174" rx="12" fill="#161b22" stroke="#30363d"/>
+    <circle cx="430" cy="140" r="13" fill="#2dd4bf"/>
+    <text x="430" y="145" text-anchor="middle" fill="#0d1117" font-size="14" font-weight="700">3</text>
+    <text x="524" y="145" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Train &amp; Compare</text>
+    <g font-size="12" fill="#c9d1d9">
+      <rect x="416" y="156" width="188" height="25" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="510" y="173" text-anchor="middle">Logistic Regression</text>
+      <rect x="416" y="185" width="188" height="25" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="510" y="202" text-anchor="middle">Random Forest</text>
+      <rect x="416" y="214" width="188" height="25" rx="6" fill="#0d1117" stroke="#30363d"/>
+      <text x="510" y="231" text-anchor="middle">XGBoost</text>
+      <rect x="416" y="243" width="188" height="25" rx="6" fill="#0d1117" stroke="#2dd4bf">
+        <animate attributeName="opacity" values="0.5;1;0.5" dur="2.2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="510" y="260" text-anchor="middle" fill="#2dd4bf" font-weight="600">Neural Network (TensorFlow)</text>
+    </g>
+    <rect x="402" y="118" width="217" height="174" rx="12" fill="none" stroke="#2dd4bf" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.42;0.50;0.58;1" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ===== Stage 4: Best model ===== -->
+  <g>
+    <rect x="637" y="118" width="152" height="174" rx="12" fill="#161b22" stroke="#30363d"/>
+    <circle cx="665" cy="146" r="13" fill="#e3b341"/>
+    <text x="665" y="151" text-anchor="middle" fill="#0d1117" font-size="14" font-weight="700">4</text>
+    <text x="713" y="205" text-anchor="middle" fill="#e6edf3" font-size="16" font-weight="600">Best Model</text>
+    <text x="713" y="233" text-anchor="middle" fill="#8b949e" font-size="12.5">auto-selected by</text>
+    <text x="713" y="251" text-anchor="middle" fill="#8b949e" font-size="12.5">ROC-AUC / F1</text>
+    <rect x="637" y="118" width="152" height="174" rx="12" fill="none" stroke="#e3b341" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.62;0.70;0.78;1" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- ===== Stage 5: Results ===== -->
+  <g>
+    <rect x="807" y="118" width="169" height="174" rx="12" fill="#161b22" stroke="#30363d"/>
+    <circle cx="835" cy="140" r="13" fill="#3fb950"/>
+    <text x="835" y="145" text-anchor="middle" fill="#0d1117" font-size="14" font-weight="700">5</text>
+    <text x="905" y="145" text-anchor="middle" fill="#e6edf3" font-size="14" font-weight="600">Results</text>
+    <g font-size="12.5" fill="#c9d1d9">
+      <circle cx="826" cy="176" r="3" fill="#3fb950"/><text x="836" y="180">Risk + confidence</text>
+      <circle cx="826" cy="208" r="3" fill="#3fb950"/><text x="836" y="212">SHAP explanation</text>
+      <circle cx="826" cy="240" r="3" fill="#3fb950"/><text x="836" y="244">LLM symptom chat</text>
+    </g>
+    <rect x="807" y="118" width="169" height="174" rx="12" fill="none" stroke="#3fb950" stroke-width="3" opacity="0">
+      <animate attributeName="opacity" values="0;0;1;0;0" keyTimes="0;0.82;0.90;0.98;1" dur="10s" repeatCount="indefinite"/>
+    </rect>
+  </g>
+
+  <!-- Divider -->
+  <line x1="24" y1="330" x2="976" y2="330" stroke="#30363d"/>
+
+  <!-- Tech row -->
+  <text x="500" y="360" text-anchor="middle" fill="#8b949e" font-size="13">
+    5 disease models &#183; classical ML vs. deep learning &#183; SHAP explainability &#183; Groq LLM chatbot
+  </text>
+  <text x="500" y="391" text-anchor="middle" fill="#6e7681" font-size="12.5">
+    TensorFlow &#183; scikit-learn &#183; XGBoost &#183; SHAP &#183; FastAPI &#183; React &#183; Groq
+  </text>
+
+  <!-- Served-by badges -->
+  <g>
+    <rect x="360" y="406" width="128" height="22" rx="11" fill="#0d1117" stroke="#30363d"/>
+    <text x="424" y="421" text-anchor="middle" fill="#58a6ff" font-size="12" font-weight="600">FastAPI backend</text>
+    <rect x="512" y="406" width="128" height="22" rx="11" fill="#0d1117" stroke="#30363d"/>
+    <text x="576" y="421" text-anchor="middle" fill="#2dd4bf" font-size="12" font-weight="600">React frontend</text>
+  </g>
+</svg>
