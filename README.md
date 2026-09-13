@@ -78,7 +78,7 @@ ai-healthcare-diagnosis/
 │   ├── evaluate.py           # metrics + confusion matrices
 │   ├── explain.py            # global + local explainability
 │   ├── inference.py          # single-row prediction (used by app & tests)
-│   └── eda.py                # exploratory figures
+│   ├── eda.py                # exploratory figures
 │   └── llm.py                # Groq LLM: symptom extraction + narration
 ├── backend/app/              # FastAPI service (main.py, engine.py, schemas.py)
 ├── frontend/                 # React + Vite single-page app
@@ -174,7 +174,7 @@ so no extra configuration is needed. API docs are at http://localhost:8000/docs.
 streamlit run app/streamlit_app.py
 ```
 
-## How it works
+## Training pipeline
 
 Each dataset module returns a standardised `PreparedData` bundle (cleaned features, encoded
 target, column roles, and app metadata). A shared scikit-learn `ColumnTransformer` handles
