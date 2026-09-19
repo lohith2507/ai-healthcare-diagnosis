@@ -69,7 +69,10 @@ extracts symptoms, predicts, and explains — powered by a Groq LLM.
 
 ```
 ai-healthcare-diagnosis/
+├── .env.example              # Groq API key template (copy to .env)
 ├── data/raw/                 # Kaggle CSVs (git-ignored; see "Data" below)
+├── docs/
+│   └── pipeline.svg          # animated pipeline diagram for the README
 ├── src/
 │   ├── config.py             # paths + dataset registry
 │   ├── datasets/             # one cleaning/prep module per dataset
@@ -105,6 +108,7 @@ There are two ways to use the models:
 
 | Method | Path | Purpose |
 |--------|------|---------|
+| GET | `/api/health` | Liveness check plus list of trained model slugs |
 | GET | `/api/models` | List trained models |
 | GET | `/api/models/{slug}` | Schema, metrics, and figure URLs |
 | POST | `/api/models/{slug}/predict` | Probabilities + feature contributions |
