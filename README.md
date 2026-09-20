@@ -76,7 +76,7 @@ ai-healthcare-diagnosis/
 ├── src/
 │   ├── config.py             # paths + dataset registry
 │   ├── datasets/             # one cleaning/prep module per dataset
-│   ├── models/               # classical + Keras model factories
+│   ├── artifacts.py          # load/save trained model artifacts
 │   ├── train.py              # trains & evaluates all models, saves artifacts
 │   ├── evaluate.py           # metrics + confusion matrices
 │   ├── explain.py            # global + local explainability
