@@ -141,8 +141,9 @@ pip install -r requirements.txt
 
 # 3. Put the CSVs in data/raw/  (see "Data" above)
 
-# 3b. (Optional) enable the symptom chatbot: copy .env.example to .env and add your
-#     Groq API key from https://console.groq.com/keys
+# 3b. (Optional) enable the symptom chatbot / AI explanations: copy .env.example to
+#     .env and set GROQ_API_KEY from https://console.groq.com/keys
+#     Optional: GROQ_MODEL overrides the default (llama-3.3-70b-versatile)
 copy .env.example .env
 
 # 4. Train all models (writes to models/ and reports/figures/)
