@@ -61,7 +61,7 @@ export default function App() {
               <p>Predict disease risk from symptoms and patient history — explainable ML + TensorFlow.</p>
             </div>
           </div>
-          <a className="repo-link" href="https://console.groq.com" target="_blank" rel="noreferrer">
+          <a className="repo-link" href="https://github.com/lohith2507/ai-healthcare-diagnosis" target="_blank" rel="noreferrer">
             React + FastAPI
           </a>
         </div>
