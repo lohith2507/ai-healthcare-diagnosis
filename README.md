@@ -3,7 +3,8 @@
 An end-to-end machine-learning project that predicts disease risk from patient history and
 symptoms. It trains and compares **classical ML** (Logistic Regression, Random Forest,
 XGBoost) against **TensorFlow neural networks** across five healthcare datasets, explains
-every prediction, and serves it all through an interactive **Streamlit** app.
+every prediction, and serves results through a **React + FastAPI** app (with an optional
+**Streamlit** UI for quick demos).
 
 > ⚠️ **Educational portfolio project — not a medical device.** Every prediction is a
 > statistical estimate from public datasets and must never be used for real diagnosis.
