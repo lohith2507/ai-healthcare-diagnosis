@@ -155,7 +155,8 @@ python -m src.eda
 python -m src.explain
 ```
 
-Train a single dataset with `python -m src.train --dataset heart`.
+Train a single dataset with `python -m src.train --dataset heart`. Valid values are `symptoms`,
+`diabetes`, `heart`, `cardio`, and `stroke`.
 
 ### Run the React + FastAPI app
 
