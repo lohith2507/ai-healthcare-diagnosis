@@ -145,7 +145,8 @@ pip install -r requirements.txt
 # 3b. (Optional) enable the symptom chatbot / AI explanations: copy .env.example to
 #     .env and set GROQ_API_KEY from https://console.groq.com/keys
 #     Optional: GROQ_MODEL overrides the default (llama-3.3-70b-versatile)
-copy .env.example .env
+copy .env.example .env             # Windows PowerShell
+# cp .env.example .env              # macOS / Linux
 
 # 4. Train all models (writes to models/ and reports/figures/)
 python -m src.train
