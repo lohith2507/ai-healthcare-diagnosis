@@ -4,8 +4,8 @@ Per dataset slug we persist:
     preprocessor.joblib        fitted sklearn ColumnTransformer
     clf_<name>.joblib          fitted classical estimators
     nn.keras                   fitted Keras model
-    metadata.json             schema the app needs to build forms & interpret output
-    metrics.json              evaluation metrics per model
+    metadata.json              schema the app needs to build forms & interpret output
+    metrics.json               evaluation metrics per model
 """
 from __future__ import annotations
 
@@ -26,6 +26,7 @@ NN_NAME = "neural_network"
 
 
 def clf_filename(name: str) -> str:
+    """Artifact filename for a classical estimator, ``clf_<name>.joblib``."""
     return f"clf_{name}.joblib"
 
 
