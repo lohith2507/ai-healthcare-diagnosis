@@ -2,9 +2,11 @@
 // proxies to http://localhost:8000 in dev (see vite.config.js).
 
 async function request(path, options = {}) {
+  const { headers, ...rest } = options;
   const res = await fetch(path, {
-    headers: { "Content-Type": "application/json" },
-    ...options,
+    ...rest,
+    // Merge caller headers instead of letting them replace Content-Type.
+    headers: { "Content-Type": "application/json", ...headers },
   });
   if (!res.ok) {
     let detail = res.statusText;
