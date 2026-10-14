@@ -39,7 +39,11 @@ def compute_metrics(y_true, y_pred, y_proba, task: str, n_classes: int) -> dict:
 
 
 def selection_score(metrics: dict, task: str) -> float:
-    """Single number used to pick the best model."""
+    """Single number used to pick the best model.
+
+    Binary tasks use ROC-AUC; multiclass tasks use macro-F1 (accuracy is
+    misleading on imbalanced labels such as stroke).
+    """
     return metrics["roc_auc"] if task == "binary" else metrics["f1_macro"]
 
 
