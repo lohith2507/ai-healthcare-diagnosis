@@ -56,7 +56,13 @@ class PreparedData:
     disease_info: dict[str, dict] = field(default_factory=dict)
 
     def build_preprocessor(self) -> ColumnTransformer:
-        """Create an *unfitted* preprocessor matching this dataset's columns."""
+        """Create an *unfitted* preprocessor matching this dataset's columns.
+
+        Numeric columns are median-imputed and standard-scaled; categorical
+        columns are mode-imputed and one-hot encoded (unknown categories are
+        ignored at predict time). Any column not listed in ``numeric_cols`` or
+        ``categorical_cols`` is dropped (``remainder="drop"``).
+        """
         numeric_pipe = Pipeline(
             [
                 ("impute", SimpleImputer(strategy="median")),
