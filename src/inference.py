@@ -20,6 +20,12 @@ def _densify(matrix) -> np.ndarray:
 
 
 def _standardise_proba(raw, task: str) -> np.ndarray:
+    """Return probabilities as an (n_samples, n_classes) array.
+
+    Keras binary models emit a single sigmoid column (P(positive)), and some
+    estimators return a flat 1-D vector; both are expanded to ``[1 - p, p]`` so
+    callers can always index class probabilities the same way as sklearn output.
+    """
     raw = np.asarray(raw)
     if task == "binary" and raw.ndim == 2 and raw.shape[1] == 1:
         p = raw.ravel()
