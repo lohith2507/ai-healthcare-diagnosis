@@ -22,6 +22,7 @@ from .datasets import load_dataset
 
 
 def _densify(matrix) -> np.ndarray:
+    """Return ``matrix`` as a dense float32 array, converting scipy sparse input first."""
     if sp.issparse(matrix):
         matrix = matrix.toarray()
     return np.asarray(matrix, dtype=np.float32)
