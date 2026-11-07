@@ -48,6 +48,12 @@ def build_row(meta: dict, values: dict) -> pd.DataFrame:
 
 
 def predict_proba(slug: str, model_name: str, row: pd.DataFrame) -> np.ndarray:
+    """Return class probabilities for one pre-built input row.
+
+    Loads the dataset's saved preprocessor and the named model (classical or
+    neural net), transforms ``row``, and returns a 1-D array aligned with
+    ``meta["target_names"]`` after ``_standardise_proba`` normalization.
+    """
     meta = artifacts.load_metadata(slug)
     pre = artifacts.load_preprocessor(slug)
     xt = _densify(pre.transform(row))
