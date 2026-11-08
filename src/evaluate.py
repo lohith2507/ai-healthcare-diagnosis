@@ -48,6 +48,13 @@ def selection_score(metrics: dict, task: str) -> float:
 
 
 def save_confusion_matrix(y_true, y_pred, target_names, path: Path, title: str) -> None:
+    """Write a confusion-matrix PNG to ``path``.
+
+    Figure size scales with the class count and caps at 16 inches so the
+    41-class symptom checker stays readable. Cell counts are shown as
+    integers when there are 12 or fewer classes; larger matrices omit the
+    numbers to avoid overlapping labels.
+    """
     labels = list(range(len(target_names)))
     cm = confusion_matrix(y_true, y_pred, labels=labels)
     n = len(target_names)
