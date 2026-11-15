@@ -48,3 +48,8 @@ st_run_out.txt
 st_run_err.txt
 CLAUDE-FABLE-5.md
 .DS_Store
+
+# Coverage reports
+.coverage
+htmlcov/
+coverage.xml
