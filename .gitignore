@@ -53,3 +53,7 @@ CLAUDE-FABLE-5.md
 .coverage
 htmlcov/
 coverage.xml
+
+# Editor settings
+.vscode/
+.idea/
