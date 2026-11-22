@@ -148,6 +148,7 @@ pip install -r requirements.txt
 copy .env.example .env             # Windows PowerShell
 # cp .env.example .env              # macOS / Linux
 
+#     (.env is git-ignored, so your key is never committed)
 # 4. Train all models (writes to models/ and reports/figures/)
 python -m src.train
 
