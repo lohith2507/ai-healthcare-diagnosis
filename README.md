@@ -175,7 +175,7 @@ npm run dev        # http://localhost:5173
 ```
 
 Open http://localhost:5173. The Vite dev server proxies `/api` and `/figures` to the backend,
-so no extra configuration is needed. API docs are at http://localhost:8000/docs.
+so no extra configuration is needed. API docs are at http://localhost:8000/docs. The backend needs trained models in `models/`, so run `python -m src.train` first or the API will list no models.
 
 ### Or run the Streamlit app
 
